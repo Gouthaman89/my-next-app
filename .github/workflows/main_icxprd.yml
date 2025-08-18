@@ -1,4 +1,3 @@
-# Docs: https://github.com/Azure/webapps-deploy
 name: Build and deploy Next.js app to Azure Web App - icxprd
 
 on:
@@ -19,23 +18,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '22.x'   # OK for Next 15/React 19; >=18.18 also fine
+          node-version: '20.x'
 
-      - name: Install deps
-        run: |
-          npm install
+      - name: Install dependencies
+        run: npm install
 
       - name: Build (standalone)
         env:
           NEXT_TELEMETRY_DISABLED: 1
         run: |
           npm run build
-          # Create minimal runtime bundle for Azure
           rm -rf release
           mkdir -p release/.next
-          # copy everything from standalone (includes server.js + node_modules)
           cp -R .next/standalone/* release/
-          # static assets + public
           cp -R .next/static release/.next/
           if [ -d public ]; then cp -R public release/public; fi
 
@@ -62,6 +57,4 @@ jobs:
           app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
-          package: .'
-
-
+          package: release
