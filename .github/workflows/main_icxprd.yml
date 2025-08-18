@@ -19,4 +19,4 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
           package: ./release
-          startup-command: 'node .next/standalone/server.js'
+
