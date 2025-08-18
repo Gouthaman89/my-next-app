@@ -62,7 +62,6 @@ jobs:
           app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
-          package: .
-          # IMPORTANT: run the bundled Next server entry
-          startup-command: 'node server.js'
+          package: .'
+
 
