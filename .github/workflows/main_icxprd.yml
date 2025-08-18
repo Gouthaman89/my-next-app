@@ -49,7 +49,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nextjs-standalone
-          path: .
+          path: release  # ✅ This is the fix
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
@@ -57,4 +57,4 @@ jobs:
           app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
-          package: release
+          package: release  # ✅ This matches the downloaded path
