@@ -1,4 +1,4 @@
-name: Build and deploy Next.js app to Azure Web App - icxprd
+name: Deploy prebuilt Next.js to Azure Web App - icxprd
 
 on:
   push:
@@ -6,56 +6,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build (standalone)
-        env:
-          NEXT_TELEMETRY_DISABLED: 1
-        run: |
-            npm run build
-            rm -rf release
-            mkdir -p release
-        
-            # 1. Ship the standalone server + its node_modules
-            cp -R .next/standalone/* release/
-        
-            # 2. Ship ALL of .next (but skip cache for speed)
-            rsync -av --exclude cache .next/ release/.next/
-        
-            # 3. Public folder if present
-            if [ -d public ]; then cp -R public release/public; fi
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: nextjs-standalone
-          path: release
-
   deploy:
     runs-on: ubuntu-latest
-    needs: build
-
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: nextjs-standalone
-          path: release
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
@@ -63,6 +18,5 @@ jobs:
           app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
-          package: release
-
-
+          package: ./release
+          startup-command: 'node .next/standalone/server.js'
