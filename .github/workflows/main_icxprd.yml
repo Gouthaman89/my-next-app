@@ -29,9 +29,12 @@ jobs:
         run: |
           npm run build
           rm -rf release
-          mkdir -p release/.next
+          mkdir -p release
+          # Copy standalone server + node_modules
           cp -R .next/standalone/* release/
-          cp -R .next/static release/.next/
+          # Copy full .next folder except cache
+          rsync -av --exclude cache .next/ release/.next/
+          # Copy public assets if present
           if [ -d public ]; then cp -R public release/public; fi
 
       - name: Upload artifact
@@ -49,7 +52,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: nextjs-standalone
-          path: release  # ✅ This is the fix
+          path: release
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
@@ -57,4 +60,5 @@ jobs:
           app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
-          package: release  # ✅ This matches the downloaded path
+          package: release
+          startup-command: 'node server.js' # ✅ Needed for Linux to start from root
