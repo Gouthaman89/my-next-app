@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'  # Recommended for Next.js
+          node-version: '18.x'  # Compatible with Next.js 15+
 
       - name: Install dependencies
         run: npm install
@@ -27,11 +27,13 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Upload artifact for deployment
+      - name: Upload full project (excluding node_modules)
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-app
-          path: .next
+          path: |
+            ./
+            !node_modules
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,7 +48,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'icxprd' # Your Azure Web App name
+          app-name: 'icxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
           package: .
