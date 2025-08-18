@@ -4,7 +4,7 @@
     "env": {},
     "webpack": null,
     "eslint": {
-      "ignoreDuringBuilds": false
+      "ignoreDuringBuilds": true
     },
     "typescript": {
       "ignoreBuildErrors": false,
@@ -14,7 +14,7 @@
     "cleanDistDir": true,
     "assetPrefix": "",
     "cacheMaxMemorySize": 52428800,
-    "configOrigin": "next.config.ts",
+    "configOrigin": "next.config.mjs",
     "useFileSystemPublicRoutes": true,
     "generateEtags": true,
     "pageExtensions": [
@@ -287,7 +287,7 @@
     },
     "htmlLimitedBots": "Mediapartners-Google|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti",
     "bundlePagesRouterDependencies": false,
-    "configFileName": "next.config.ts",
+    "configFileName": "next.config.mjs",
     "turbopack": {
       "root": "/Users/gouthaman/Desktop/PwC_app/testforauzre/my-next-app"
     }
@@ -309,6 +309,8 @@
     ".next/app-build-manifest.json",
     ".next/server/server-reference-manifest.js",
     ".next/server/server-reference-manifest.json",
+    ".next/dynamic-css-manifest.json",
+    ".next/server/dynamic-css-manifest.js",
     ".next/BUILD_ID",
     ".next/server/next-font-manifest.js",
     ".next/server/next-font-manifest.json",

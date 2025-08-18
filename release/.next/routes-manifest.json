@@ -27,16 +27,286 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
-      "page": "/_not-found",
-      "regex": "^/_not\\-found(?:/)?$",
+      "page": "/AssetUploadPage",
+      "regex": "^/AssetUploadPage(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/_not\\-found(?:/)?$"
+      "namedRegex": "^/AssetUploadPage(?:/)?$"
+    },
+    {
+      "page": "/Chat",
+      "regex": "^/Chat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Chat(?:/)?$"
+    },
+    {
+      "page": "/CompanyList",
+      "regex": "^/CompanyList(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/CompanyList(?:/)?$"
+    },
+    {
+      "page": "/Dashboard3",
+      "regex": "^/Dashboard3(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Dashboard3(?:/)?$"
+    },
+    {
+      "page": "/EmployeeAttendancePage",
+      "regex": "^/EmployeeAttendancePage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/EmployeeAttendancePage(?:/)?$"
+    },
+    {
+      "page": "/EmployeeCommutePage",
+      "regex": "^/EmployeeCommutePage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/EmployeeCommutePage(?:/)?$"
+    },
+    {
+      "page": "/HomePage",
+      "regex": "^/HomePage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/HomePage(?:/)?$"
+    },
+    {
+      "page": "/LookupTablesPage",
+      "regex": "^/LookupTablesPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/LookupTablesPage(?:/)?$"
+    },
+    {
+      "page": "/Organization",
+      "regex": "^/Organization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Organization(?:/)?$"
+    },
+    {
+      "page": "/Organization_iadmin",
+      "regex": "^/Organization_iadmin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Organization_iadmin(?:/)?$"
+    },
+    {
+      "page": "/Organization_orgadmin",
+      "regex": "^/Organization_orgadmin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Organization_orgadmin(?:/)?$"
+    },
+    {
+      "page": "/Organizationedit",
+      "regex": "^/Organizationedit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/Organizationedit(?:/)?$"
+    },
+    {
+      "page": "/ScopeFilterDialog",
+      "regex": "^/ScopeFilterDialog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ScopeFilterDialog(?:/)?$"
+    },
+    {
+      "page": "/UnderConstruction",
+      "regex": "^/UnderConstruction(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/UnderConstruction(?:/)?$"
+    },
+    {
+      "page": "/VendorFactorPage",
+      "regex": "^/VendorFactorPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/VendorFactorPage(?:/)?$"
+    },
+    {
+      "page": "/VendorServiceFactorPage",
+      "regex": "^/VendorServiceFactorPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/VendorServiceFactorPage(?:/)?$"
+    },
+    {
+      "page": "/VendorServicesPage",
+      "regex": "^/VendorServicesPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/VendorServicesPage(?:/)?$"
+    },
+    {
+      "page": "/VendorSettingsPage",
+      "regex": "^/VendorSettingsPage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/VendorSettingsPage(?:/)?$"
+    },
+    {
+      "page": "/carbonreport",
+      "regex": "^/carbonreport(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/carbonreport(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/dashboard2",
+      "regex": "^/dashboard2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard2(?:/)?$"
+    },
+    {
+      "page": "/f191060e10",
+      "regex": "^/f191060e10(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/f191060e10(?:/)?$"
+    },
+    {
+      "page": "/f191060e10_dataTable",
+      "regex": "^/f191060e10_dataTable(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/f191060e10_dataTable(?:/)?$"
+    },
+    {
+      "page": "/f191060e10_dataform",
+      "regex": "^/f191060e10_dataform(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/f191060e10_dataform(?:/)?$"
     },
     {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/final-carbon-report",
+      "regex": "^/final\\-carbon\\-report(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final\\-carbon\\-report(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/GenericTable",
+      "regex": "^/final_carbonreport_sub_page/GenericTable(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/GenericTable(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/finalcarbonreporitextend1",
+      "regex": "^/final_carbonreport_sub_page/finalcarbonreporitextend1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/finalcarbonreporitextend1(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/finalreport34",
+      "regex": "^/final_carbonreport_sub_page/finalreport34(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/finalreport34(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list1",
+      "regex": "^/final_carbonreport_sub_page/report2_list1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list1(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list2",
+      "regex": "^/final_carbonreport_sub_page/report2_list2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list2(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list3",
+      "regex": "^/final_carbonreport_sub_page/report2_list3(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list3(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list4",
+      "regex": "^/final_carbonreport_sub_page/report2_list4(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list4(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list5",
+      "regex": "^/final_carbonreport_sub_page/report2_list5(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list5(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list6",
+      "regex": "^/final_carbonreport_sub_page/report2_list6(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list6(?:/)?$"
+    },
+    {
+      "page": "/final_carbonreport_sub_page/report2_list7",
+      "regex": "^/final_carbonreport_sub_page/report2_list7(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/final_carbonreport_sub_page/report2_list7(?:/)?$"
+    },
+    {
+      "page": "/functionpage",
+      "regex": "^/functionpage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/functionpage(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/person",
+      "regex": "^/person(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/person(?:/)?$"
+    },
+    {
+      "page": "/personMaping",
+      "regex": "^/personMaping(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/personMaping(?:/)?$"
+    },
+    {
+      "page": "/profile",
+      "regex": "^/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/profile(?:/)?$"
+    },
+    {
+      "page": "/report1",
+      "regex": "^/report1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/report1(?:/)?$"
+    },
+    {
+      "page": "/reportpage",
+      "regex": "^/reportpage(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reportpage(?:/)?$"
+    },
+    {
+      "page": "/reportpage1",
+      "regex": "^/reportpage1(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reportpage1(?:/)?$"
+    },
+    {
+      "page": "/reportpage2",
+      "regex": "^/reportpage2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/reportpage2(?:/)?$"
+    },
+    {
+      "page": "/rolemapping",
+      "regex": "^/rolemapping(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/rolemapping(?:/)?$"
+    },
+    {
+      "page": "/teststation",
+      "regex": "^/teststation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/teststation(?:/)?$"
     }
   ],
   "dataRoutes": [],

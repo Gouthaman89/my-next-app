@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5379],{28958:(_,n,e)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/final_carbonreport_sub_page/finalreport34",function(){return e(34862)}])}},_=>{_.O(0,[6031,3574,4862,636,6593,8792],()=>_(_.s=28958)),_N_E=_.O()}]);
