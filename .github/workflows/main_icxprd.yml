@@ -27,12 +27,18 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
         run: |
-          npm run build
-          rm -rf release
-          mkdir -p release
-          cp -R .next/standalone/* release/
-          rsync -av --exclude cache .next/ release/.next/
-          if [ -d public ]; then cp -R public release/public; fi
+            npm run build
+            rm -rf release
+            mkdir -p release
+        
+            # 1. Ship the standalone server + its node_modules
+            cp -R .next/standalone/* release/
+        
+            # 2. Ship ALL of .next (but skip cache for speed)
+            rsync -av --exclude cache .next/ release/.next/
+        
+            # 3. Public folder if present
+            if [ -d public ]; then cp -R public release/public; fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -59,3 +65,4 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50C11AE1765940BE82E6BFCA42678516 }}
           package: release
           startup-command: 'node server.js'
+
