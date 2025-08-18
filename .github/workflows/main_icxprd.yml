@@ -2,8 +2,7 @@ name: Build and deploy Next.js app to Azure Web App - icxprd
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,42 +10,42 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '22.x'  # Compatible with Next.js 15+
+          node-version: '20.x'
+          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm ci
+      - run: npm run build
 
-      - name: Build the app
-        run: npm run build
-
-      - name: Upload full project (excluding node_modules)
-        uses: actions/upload-artifact@v4
+      # Upload source needed for runtime (no node_modules)
+      - uses: actions/upload-artifact@v4
         with:
           name: nextjs-app
           path: |
-            ./
-            !node_modules
+            package.json
+            package-lock.json
+            next.config.js
+            .next
+            public
+            app
+            pages
+            middleware.ts
+            styles
+            # add any other folders your app uses at runtime
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: nextjs-app
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
+      - uses: azure/webapps-deploy@v3
         with:
           app-name: 'icxprd'
           slot-name: 'Production'
