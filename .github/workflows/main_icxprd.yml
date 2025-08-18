@@ -19,24 +19,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'  # Match your local Node.js version
+          node-version: '22.x'  # Compatible with Next.js 15+
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Next.js app
+      - name: Build the app
         run: npm run build
 
-      - name: Upload full app as artifact (excluding node_modules)
+      - name: Upload full project (excluding node_modules)
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-app
           path: |
             ./
             !node_modules
-            !.git
-            !.github
-            !.vscode
 
   deploy:
     runs-on: ubuntu-latest
