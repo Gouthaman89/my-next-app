@@ -1,0 +1,275 @@
+/* src/pages/AnimatedPage.css */
+
+/* General Container */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #eaeaea; /* Light grey background */
+  position: relative;
+}
+
+/* Input Field */
+.input-field {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-label {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.input-box {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Center Line Container */
+.center-line-container {
+  position: relative;
+  width: 80%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Production Line */
+.center-line {
+  width: 100%;
+  height: 8px; /* Slightly thicker line */
+  background: linear-gradient(
+    90deg,
+    #4b4b4b,
+    #2c2c2c,
+    #4b4b4b
+  ); /* Metallic gradient */
+  background-size: 200% 100%;
+  animation: move-line 4s linear infinite; /* Conveyor belt animation */
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Animation for Production Line */
+@keyframes move-line {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Boxes Container */
+.boxes-container {
+  position: absolute;
+  top: 50%;
+  justify-content: space-evenly; /* Ensures regular spacing */
+  transform: translateY(-50%);
+  display: flex;
+  gap: 40px; /* Increased gap for regular interval spacing */
+  flex-wrap: wrap;
+  z-index: 2; /* Ensure boxes are above the line */
+} 
+/* Box Styling */
+.box {
+  background: linear-gradient(
+    to bottom,
+    #d4d4d4,
+    #a9a9a9
+  ); /* Metallic look */
+  border: 2px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #555;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle connector */
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #555;
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%); /* Triangle connector */
+}
+
+/* Hover Effect on Box */
+.box:hover {
+  background: linear-gradient(
+    to bottom,
+    #e0e0e0,
+    #b5b5b5
+  );
+  cursor: pointer;
+}
+
+/* Shape Inside Box */
+.shape-in-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+}
+
+/* Circle Shape */
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff7b7b, #d64545); /* Gradient for depth */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Triangle Shape */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #3498db; /* Triangle color */
+  position: relative;
+}
+
+.triangle-number {
+  position: absolute;
+
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Draggable Shapes Area */
+.draggable-shapes-area {
+  width: 80%;
+  height: 150px;
+  position: relative;
+  border: 2px dashed #bbb; /* Dashed border for drop area */
+  border-radius: 10px;
+  background-color: #fafafa;
+  padding: 10px;
+  box-shadow: inset 0px 6px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Draggable Circle */
+.draggable-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff7b7b, #d64545);
+  cursor: grab;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 10;
+}
+
+.draggable-circle:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+/* Draggable Triangle */
+.draggable-triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #3498db;
+  position: absolute;
+  z-index: 10;
+  cursor: grab;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  top: calc(50% - 20px); /* Align center vertically */
+  left: calc(50% - 20px); /* Align center horizontally */
+}
+
+.draggable-triangle:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+/* Animation when Shape is Added to Box */
+@keyframes shape-drop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.shape-in-box > * {
+  animation: shape-drop 0.3s ease-out;
+}
+
+/* Optional: Glow Effect on Box when Hovering with Shape */
+.box.drag-over {
+  box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.8);
+  border-color: #ffd700;
+}
+
+.remove-shape-button {
+  background: red;
+  border: none;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 2px 5px;
+}
+
+/* Extracted Styles from React Component */
+
+/* Industrial Pattern */
+.industrial-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.1) 10px,
+    rgba(0, 0, 0, 0.1) 20px
+  );
+}
