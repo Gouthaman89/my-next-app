@@ -54,7 +54,8 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'ecoxprd '
+          app-name: 'ecoxprd'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A7898031242E4DB3AA6EAC8C4E1D6BBC }}
           package: release
+
